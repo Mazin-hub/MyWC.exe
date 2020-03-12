@@ -1,22 +1,58 @@
+import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.util.Vector;
+import java.util.HashMap;
+
 
 public class test {
     public static void main(String[] args) throws Exception{
-        File f = new File("e:/develop/theme/My_wc/wc/src/test.java");
-//        Vector v =new Vector(10,10);
-//        Vector vv = new Vector(10,10);
-//        vv = fileDir(f,v);
-//        String[] path = new String[20];
-//        path = pathtest(f,vv);
-//        int i = 1;
-//        while( 0 < path.length) {
-//            System.out.println(path[i]);
-//            i++;
-//        }
+//        File f = new File("e:/develop/theme/My_wc/t.txt");
+//        int dir_num = 0, map_key = 0;
+//        String[] real_path = new String[10];
+//        HashMap<Integer,File> hm = new HashMap<Integer,File>();
+//        File[] list = f.listFiles();
+//        while(dir_num < list.length)
+//                hm.put(map_key++,list[dir_num++]);       // 拿到输入 路径下的所有文件
+//        int count_dir = 0, count ,len = list.length;
+//            while (count_dir < len) {
+//                count = 0;
+//                File temp_file = hm.get(count_dir);
+//                if (temp_file.isDirectory()) {
+//                    list = temp_file.listFiles();
+//                    len += list.length;
+//                    while (count < list.length)
+//                        hm.put(map_key++, list[count++]);
+//                }
+//                count_dir++;
+//            }
+//            int i =0 ,j=0;
+//            while(i<hm.size()) {
+//                if(!hm.get(i).isDirectory())
+//                   real_path[j++] = hm.get(i).getPath();
+//                i++;
+//            }
+//            i = 0;
+//            while(i < real_path.length)
+//                System.out.println(real_path[i++]);
 
+//        String[] s;
+//        int i=0,j=0;
+//        enter = f.listFiles();
+//        real_path = enter[0].listFiles();
+//        real_path = enter[1].listFiles();
+
+
+//        System.out.println(real_path[0]);
+   //     System.out.println(real_path[1]);
+
+
+//         while(i<real_path.length)                 // 目录下东西的路径
+//            System.out.println(real_path[i++]);
+
+//         s = f.list();                      // 目录下的东西
+//         while(i<s.length)
+//             System.out.println(s[i++]);
 //        String str = f.getParent();
 //        System.out.println(str);
 
@@ -40,68 +76,83 @@ public class test {
 //        if(path[0] == null)
 //            System.out.println("null是空");
 //        else System.out.println("null");
-//        int num = 1;
-//        FileReader in = new FileReader(f);
+
+//        int num = 0;
+//        FileReader in = new FileReader("e:/develop/theme/My_wc/wc/src/test.java");
 //        BufferedReader reader = new BufferedReader(in);
-//        String str = reader.readLine();
-//        while(str != null){
-//            num++;
-//            str = reader.readLine();
+//        int len = 0; String s;
+//        s = reader.readLine();
+//        while(s != null) {
+//  //          if(s.contains("\r\n"))
+//                len ++;
+//            System.out.println(s);
+//            s = reader.readLine();
 //        }
+//
+//        System.out.println(len);
+
+       JFileChooser jf = new JFileChooser();
+       JTextArea
+
+//            num++;
 //        System.out.println(num);
-    }
-    public static Vector fileDir(File dir,Vector v){
-        File[] files=dir.listFiles();         /*    listFiles()返回该目录下的所有文件与目录    */
-        for(File filess : files){             /*   有子目录(含文件或目录)则递归直到得到所有文件名和目录名  */
-            if(filess.isDirectory()){
-                v.add(filess.getName());
-                fileDir(filess,v);                                //递归
-            }
-            if(!filess.isDirectory())
-                v.add(filess.getName());
-        }
-        v.add(" ");
-        return v;
-    }
-    public static String[] pathtest(File f,Vector file_name){
-        Object[] all_file = file_name.toArray();
-        int i = 0 , j = 0;
-        String[] real_path = new String[20];     // 固定长度文件...哎
-        String temp1 = new String("");
-        String temp2 = new String("");
-        File turn_path = new File(f.getPath());
-        while(i < all_file.length) {
-
-            if (turn_path.isDirectory()) {
-                if (!all_file[i].equals(" ")) {        // 不是以“ ”进来被认为的目录
-                    if (!turn_path.canRead())
-                        ;
-                    else turn_path = new File(turn_path.getPath() + "\\" + all_file[i].toString());
-                }
-            }else             //  文件
-                real_path[j++] = f.getPath() + temp1 + "\\" + all_file[i].toString();
-            i++;
-        }
-
-//        File turn_path = new File(f.getPath() + "\\" + all_file[i].toString());
-//        while(true) {
-//            while (turn_path.isDirectory()) {
-//                if (!all_file[i].equals(" ")) {
-//                    temp = temp + "\\" + all_file[i++].toString();
-//                    if (i < all_file.length)
-//                        turn_path = new File(f.getPath() + temp + "\\" + all_file[i].toString());
-//                    else break;
-//                } else {
-//                    temp = "";
-//                    turn_path = new File(f.getPath() + temp + "\\" + all_file[i].toString());
+//        String s = "e:/develop/theme/My_wc/t.txt";
+//        FileReader in = new FileReader(s);
+//        int t =in.read();
+//        if(t == '\r') {
+//                System.out.println("\t是-1");
+//            t = in.read();
+//            if(t=='\n')
+//                System.out.println("ad");
+//            t= in.read();
+//            if(t=='\r') System.out.println("en");
+//            if (t == -1)
+//                System.out.println("\n是-1");
+//        }
+//        System.out.println("?");
+//        int row_num = 1;
+//        int r = in.read();
+//        while (true) {
+//            // 接收的回车是  两个字节
+//            if(r == '\r') {
+//                // r = in.read()
+//                if (in.read() == '\n') {
+//                    row_num++;
 //                }
 //            }
-//            real_path[j++] = f.getPath() + temp + "\\" + all_file[i].toString();
-//            if( ++i < all_file.length)
-//                turn_path = new File(f.getPath() + temp + "\\" + all_file[i].toString());
-//            else break;
-//
-        return real_path;
-   }
-}
+//                r = in.read();
+//                if (r == -1) {
+//                    break;
+//                }
+//        }
 
+
+//        String str = reader.readLine(),string="$";
+//        while(str!=null) {
+//            string = str;
+//            str = reader.readLine();
+//            row_num++;
+//        }
+//        if(string.contains(""))
+//            row_num++;
+//
+//        System.out.println("文件行数为" + row_num);
+//        in.close();
+    //    reader.close();
+    }
+
+
+    public static File[] fileDir(File dir, File[] f) {
+
+        File[] files = dir.listFiles();         /*    listFiles()返回该目录下的所有文件与目录    */
+        for (File filess : files) {             /*   有子目录(含文件或目录)则递归直到得到所有文件名和目录名  */
+            if (filess.isDirectory())
+                fileDir(filess, f);                                //递归
+             else
+                f[f.length] = filess;
+        }
+        return f;
+    }
+
+
+}
