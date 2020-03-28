@@ -1,0 +1,30 @@
+import java.io.File;
+import java.util.Vector;
+
+public class test {
+    public static void main(String[] args) {
+        File f = new File("e:/develop/theme/My_wc/.idea");
+        Vector v =new Vector(10,10);
+        Vector vv = new Vector(10,10);
+        vv = fileDir(f,v);
+        Object[] all_file = vv.toArray();
+        int i = 0;
+        while( i < all_file.length) {
+            System.out.println(all_file[i].toString());
+            i++;
+        }
+
+    }
+    public static Vector fileDir(File dir,Vector v){
+        File[] files=dir.listFiles();         /*    listFiles()返回该目录下的所有文件与目录    */
+        for(File filess : files){             /*   有子目录(含文件或目录)则递归直到得到所有文件名和目录名  */
+            if(filess.isDirectory()){
+                fileDir(filess,v);                                //递归
+            }
+            if(!filess.isDirectory())
+                v.add(filess.getName());
+        }
+        return v;
+    }
+}
+
